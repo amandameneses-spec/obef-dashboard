@@ -95,7 +95,7 @@ tr:nth-child(even) td{background:#FAFBFC;}
 const C={navy:"#161A32",blue:"#437FB7",red:"#E74E37",orange:"#F3A54C",white:"#FFFFFF",gray:"#F4F5F8",muted:"#8890A6",green:"#2D7A4F",light:"#E8EAF0"};
 const META_GLOBAL=57600,META_PUBLICA=28800,META_PRIVADA=28800;
 const ENCERRAMENTO="03/07/2026";
-const ATUALIZACAO="08/06/2026";
+const ATUALIZACAO="11/06/2026";
 
 const RAW=[
   ["10/04","Piauí","Pública (Estadual)","CETI MOISANIEL ALVES DE SOUSA",0,0,0,0,81],
@@ -182,6 +182,15 @@ const RAW=[
   ["06/06","Alagoas","Privada","Colégio de Educação Básica Santa Esmeralda",0,0,69,89,56],
   ["07/06","Santa Catarina","Privada","Colégio Universitário UNIFEBE",0,0,0,0,9],
   ["08/06","Paraná","Pública (Municipal)","EM Senador Marcos de Barros Freire",114,112,0,0,0],
+  ["08/06","Paraná","Pública (Municipal)","EM Professora Maria Madalena Côco",94,99,0,0,0],
+  ["08/06","Paraná","Pública (Municipal)","EM Antonieta da Silva Lautenschlager",75,85,0,0,0],
+  ["09/06","Paraná","Pública (Municipal)","EM Luiz Carlos Prestes",66,60,0,0,0],
+  ["09/06","Pará","Privada","Escola SESI Ananindeua",0,0,0,0,32],
+  ["09/06","Rio Grande do Norte","Privada","Centro Integrado de Vivências Educacionais",0,35,0,0,0],
+  ["10/06","São Paulo","Privada","Colégio Galileu",0,0,0,0,23],
+  ["10/06","São Paulo","Privada","Colégio Embraer Juarez Wanderley",0,0,0,0,11],
+  ["10/06","Rio Grande do Sul","Privada","Colégio Israelita Brasileiro",0,0,28,8,3],
+  ["10/06","Paraíba","Privada","Instituto Educacional Paraibano",0,9,19,34,0],
 ];
 
 const toNum=v=>{const n=parseInt(String(v).replace(/\D/g,""),10);return isNaN(n)?0:n;};
@@ -318,7 +327,7 @@ function diasRestantes(){
 }
 
 function buildTimeline(rows){
-  const order=["10/04","14/04","16/04","17/04","18/04","22/04","23/04","24/04","27/04","28/04","29/04","04/05","05/05","06/05","07/05","08/05","13/05","15/05","17/05","18/05","19/05","20/05","21/05","22/05","27/05","28/05","29/05","01/06","03/06","05/06","06/06","07/06","08/06"];
+  const order=["10/04","14/04","16/04","17/04","18/04","22/04","23/04","24/04","27/04","28/04","29/04","04/05","05/05","06/05","07/05","08/05","13/05","15/05","17/05","18/05","19/05","20/05","21/05","22/05","27/05","28/05","29/05","01/06","03/06","05/06","06/06","07/06","08/06","09/06","10/06"];
   const byDate={};order.forEach(d=>byDate[d]=0);
   rows.forEach(r=>{if(byDate[r.data]!==undefined)byDate[r.data]+=r.total;});
   const daily=Object.entries(byDate).filter(([,v])=>v>0).map(([name,value])=>({name,value}));
