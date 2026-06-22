@@ -94,8 +94,8 @@ tr:nth-child(even) td{background:#FAFBFC;}
 <script>
 const C={navy:"#161A32",blue:"#437FB7",red:"#E74E37",orange:"#F3A54C",white:"#FFFFFF",gray:"#F4F5F8",muted:"#8890A6",green:"#2D7A4F",light:"#E8EAF0"};
 const META_GLOBAL=57600,META_PUBLICA=28800,META_PRIVADA=28800;
-const ENCERRAMENTO="28/06/2026";
-const ATUALIZACAO="19/06/2026";
+const ENCERRAMENTO="30/06/2026";
+const ATUALIZACAO="22/06/2026";
 
 const RAW=[
   ["10/04","Piauí","Pública (Estadual)","CETI MOISANIEL ALVES DE SOUSA",0,0,0,0,81],
@@ -195,8 +195,6 @@ const RAW=[
   ["11/06","Rio Grande do Norte","Privada","Contemporâneo",0,35,35,27,43],
   ["12/06","Paraíba","Privada","Colégio Vila",0,0,339,268,291],
   ["12/06","Paraná","Privada","Colégio Bom Jesus Água Verde",0,5,17,11,0],
-  ["12/06","Paraná","Privada","Colégio Vila",0,0,339,268,291],
-  ["14/04","Piauí","Pública (Estadual)","CETI Professor Raimundo Portela",0,0,0,0,159],
   ["15/06","Pará","Privada","Colégio Physics Três Corações",43,46,88,110,240],
   ["15/06","Paraíba","Privada","Sergio Melquior Barbosa da Silva",0,9,15,4,85],
   ["16/06","Paraíba","Privada","IE Colégio e Curso",0,7,19,24,4],
@@ -235,6 +233,113 @@ const RAW=[
   ["18/06","Paraíba","Pública (Federal)","IFPB Campus Santa Rita",0,0,0,0,11],
   ["19/06","Paraíba","Pública (Estadual)","Escola Cidadã Integral Técnica Antônio Avelino de Almeida",0,0,0,0,105],
   ["19/06","Paraíba","Privada","Ação Colégio e Curso",0,0,26,50,31],
+  ["19/06","Paraná","Privada","Colégio Interativa Educação Infantil Ensino Fundamental e Médio",58,58,63,58,57],
+  ["19/06","Paraíba","Privada","Colégio Pio XI",15,11,15,10,16],
+  ["19/06","Ceará","Pública (Municipal)","Escola de Tempo Integral Professora Noelia Ximenes Parente",14,17,0,0,0],
+  ["19/06","Paraíba","Privada","ISO Colégio e Cursos - Sul",1,0,1,0,0],
+  ["19/06","Paraná","Pública (Municipal)","EM Professor Bento Fernandes Dias",71,82,0,0,0],
+  ["19/06","Pará","Privada","Escola de Educação Básica Zaira Maciel",43,64,88,52,67],
+  ["19/06","São Paulo","Privada","Colégio Presbiteriano Mackenzie Tamboré",0,0,0,0,30],
+  ["19/06","São Paulo","Pública (Federal)","Instituto Federal de Educação Campos do Jordão",0,0,0,0,7],
+  ["19/06","Pará","Pública (Municipal)","EM Adolfo Soares de Moraes",0,0,81,80,0],
+  ["19/06","Paraíba","Privada","Kairós Colégio LTDA",22,11,0,0,0],
+  ["19/06","Paraíba","Privada","Colégio da Luz",0,0,153,136,0],
+  ["19/06","Pará","Pública (Estadual)","EE Dom Alberto Gaudêncio Ramos",0,0,152,144,0],
+  ["19/06","Pará","Privada","Escola Adventista da Marambaia",0,0,32,40,0],
+  ["19/06","Pernambuco","Pública (Municipal)","EREF João Bento de Paiva",0,0,24,18,0],
+  ["19/06","Piauí","Pública (Estadual)","CETI Professor Raldir Cavalcante Bastos",0,0,0,0,5],
+  ["19/06","Pernambuco","Pública (Federal)","Colégio Militar do Recife",0,0,32,30,21],
+  ["19/06","Pará","Privada","Sistema Educacional Sophos Tavares Bastos",0,0,72,124,90],
+  ["19/06","Ceará","Pública (Federal)","IFCE Campus Baturité",0,0,0,0,6],
+  ["19/06","Pará","Pública (Municipal)","EMEF Maria do Carmo Pinheiro Rodrigues",0,24,10,11,0],
+  ["19/06","Rio Grande do Norte","Pública (Estadual)","EE José Calazans Freire",0,0,0,0,10],
+  ["19/06","Paraná","Pública (Municipal)","EM Professora Marilda Duarte Noli",85,50,0,0,0],
+  ["19/06","Pará","Privada","Colégio Physics Umarizal",43,49,68,85,146],
+  ["19/06","Rio Grande do Norte","Privada","Over Colégio e Curso Mossoró",0,0,6,4,1],
+  ["19/06","Pará","Pública (Estadual)","EE Nossa Senhora Aparecida",11,0,0,0,0],
+  ["19/06","Piauí","Pública (Estadual)","CEEPRU Prof Maria Amalia",0,0,0,0,143],
+  ["19/06","Paraíba","Privada","Espaço Educacional Carmela Veloso",58,47,62,72,80],
+  ["19/06","Ceará","Pública (Estadual)","EE de Ensino Profissional Jaime Alencar de Oliveira",0,0,0,0,31],
+  ["19/06","Pará","Pública (Estadual)","EE Eugênia Cavalleiro de Macedo",0,0,20,20,0],
+  ["19/06","Minas Gerais","Pública (Estadual)","EE Professor Vicente Lopes Perez",0,0,0,0,124],
+  ["19/06","Paraíba","Privada","Educandario Americo Mesquita",54,45,64,67,127],
+  ["19/06","Minas Gerais","Privada","Colégio Fucamp",0,0,31,22,65],
+  ["19/06","Amapá","Privada","Colégio Physics Macapá",0,0,40,29,0],
+  ["19/06","Pará","Privada","Santa Madre",0,37,9,11,33],
+  ["19/06","Minas Gerais","Pública (Estadual)","EE Gregoriano Canedo",0,0,0,0,84],
+  ["19/06","Santa Catarina","Pública (Estadual)","Escola de Educação Básica Marilda Lênia Araújo",0,0,13,24,66],
+  ["19/06","São Paulo","Privada","Colégio Jean Piaget",0,0,58,65,72],
+  ["20/06","Paraíba","Privada","Ação Colégio e Curso",0,0,29,51,31],
+  ["20/06","Paraná","Privada","Colégio Londrinense",0,0,40,20,15],
+  ["20/06","Pará","Privada","Physics +",35,16,27,50,144],
+  ["20/06","Pará","Privada","Centro de Ensino Técnico Ideal",120,180,300,360,1000],
+  ["20/06","Pará","Privada","Avante Pequeno Príncipe",0,1,2,0,0],
+  ["20/06","Ceará","Privada","Colégio Paraíso",25,38,77,113,92],
+  ["20/06","Ceará","Pública (Municipal)","Escola de Tempo Integral Nossa Senhora do Rosário",0,0,11,66,0],
+  ["20/06","Rio Grande do Norte","Pública (Municipal)","Escola Rita Dantas Veras",0,0,3,1,0],
+  ["20/06","Paraná","Pública (Estadual)","Colégio de Aplicação Pedagógica da UEM-CAP",7,23,16,12,14],
+  ["20/06","Rio de Janeiro","Privada","Colégio Múltiplos",30,27,0,0,0],
+  ["20/06","Paraná","Pública (Estadual)","Instituto de Educação Estadual de Maringá",0,0,30,20,17],
+  ["20/06","Rio Grande do Sul","Privada","Colégio Santa Inês",0,2,9,22,4],
+  ["20/06","Ceará","Pública (Municipal)","Escola de Tempo Integral Alberto Alves Bezerra",5,12,0,0,0],
+  ["20/06","Pernambuco","Pública (Estadual)","EE Professora Evanira de Souza Dias",0,0,0,0,31],
+  ["20/06","Piauí","Pública (Estadual)","CETI Professor Antonio de Brito Fortes",0,0,0,0,37],
+  ["20/06","Rio Grande do Sul","Privada","Colégio Marista Rosário",0,0,18,6,5],
+  ["20/06","Mato Grosso do Sul","Pública (Estadual)","EE Cel. José Alves Ribeiro",0,1,0,0,16],
+  ["20/06","Rio Grande do Norte","Pública (Municipal)","Creche EM Professora Iraci Santana da Silva",0,0,0,7,0],
+  ["20/06","Rio de Janeiro","Pública (Estadual)","Luciana Nascimento Lemos Magno",0,0,0,0,22],
+  ["20/06","Paraná","Pública (Estadual)","Colégio Vital Brasil",0,0,0,8,0],
+  ["20/06","Piauí","Pública (Estadual)","CETI Professora Maria de Lourdes Rebêlo",0,0,0,0,273],
+  ["21/06","Pará","Privada","Colégio Adventista da Marambaia",10,11,15,22,7],
+  ["21/06","Espírito Santo","Pública (Municipal)","EMEF Alvaro de Castro Mattos",69,56,104,97,0],
+  ["21/06","Pará","Pública (Estadual)","EE PE Orione",0,0,15,10,0],
+  ["21/06","Piauí","Pública (Estadual)","Ceti Melo Magalhães",8,8,8,8,8],
+  ["21/06","Pará","Pública (Estadual)","Escola de E F Médio Profª Hilda Vieira",0,0,17,12,0],
+  ["21/06","Paraíba","Privada","Século Colégio e Curso",4,14,11,17,8],
+  ["21/06","Pará","Privada","Colégio Physics",58,78,97,87,184],
+  ["21/06","São Paulo","Pública (Estadual)","ETEC Profª Ilza Nascimento Pintus",0,0,0,0,10],
+  ["21/06","Pará","Pública (Estadual)","EE de Ensino de Tempo Integral Dr Ulysses Guimarães",0,0,0,0,37],
+  ["21/06","Paraíba","Privada","Escola Nossa Senhora de Lourdes",67,115,122,136,124],
+  ["21/06","Piauí","Pública (Estadual)","CETI São José da Ação Social Divino Coração de Jesus",0,0,0,27,167],
+  ["21/06","Pará","Pública (Municipal)","Escola Ruy da Silveira Britto",0,0,6,29,0],
+  ["21/06","Rio de Janeiro","Pública (Federal)","Centro Federal de Educação Tecnológica - Nova Iguaçu",0,0,0,0,92],
+  ["21/06","Paraíba","Privada","Humanas Biológicas e Exatas - HBE",0,68,27,15,2],
+  ["21/06","Pernambuco","Pública (Estadual)","Escola Maria Oliveira dos Santos",0,0,17,20,0],
+  ["21/06","Rio Grande do Norte","Pública (Municipal)","Escola Municipal Vicente de Paula Rocha",0,0,6,3,0],
+  ["21/06","Piauí","Pública (Estadual)","CETI Frei Jose Apicella",137,100,100,100,100],
+  ["21/06","Pará","Privada","Colégio Physics - Almirante Barroso",70,70,99,85,191],
+  ["21/06","Pará","Pública (Federal)","IFPA Campus Paragominas",0,0,0,0,60],
+  ["21/06","Paraíba","Privada","Colégio Meta",0,0,8,4,6],
+  ["21/06","Rio Grande do Sul","Privada","Colégio São Carlos",0,25,32,34,0],
+  ["21/06","Ceará","Pública (Estadual)","EE de Educação Profissional Leonel de Moura Brizola",0,0,0,0,43],
+  ["21/06","Piauí","Pública (Estadual)","CETI Silvestre Rocha",0,0,0,0,166],
+  ["21/06","Piauí","Pública (Estadual)","CETI Farmacêutico João Carvalho",0,0,0,0,80],
+  ["21/06","Alagoas","Pública (Municipal)","EM Monsenhor José Soares",0,0,0,46,0],
+  ["21/06","Rio Grande do Norte","Privada","Colégio Diocesano Santa Luzia",225,216,39,32,10],
+  ["21/06","Rio Grande do Sul","Privada","Colégio São Carlos",0,25,33,34,0],
+  ["21/06","Piauí","Pública (Estadual)","CETI Professor Antonio dos Reis e Silva",0,0,0,0,57],
+  ["21/06","Rio Grande do Sul","Pública (Estadual)","Colégio Tiradentes da Brigada Militar de Santa Maria",0,0,0,0,18],
+  ["21/06","Pará","Pública (Estadual)","EE Almirante Tamandaré",0,0,24,27,0],
+  ["21/06","Espírito Santo","Privada","Colégio Castro Alves",0,65,110,100,130],
+  ["21/06","Pará","Privada","Physics Batista Campos",44,63,59,73,0],
+  ["21/06","Minas Gerais","Privada","Colégio Objetivo de Frutal",0,0,36,40,0],
+  ["21/06","Piauí","Pública (Estadual)","CETI Governador Dirceu Mendes Arcoverde",0,0,0,0,2],
+  ["21/06","Pernambuco","Pública (Estadual)","Escola Técnica Estadual Jurandir Bezerra Lins",0,0,0,0,68],
+  ["21/06","Ceará","Privada","Colégio Santo Antônio",1,15,6,9,20],
+  ["21/06","Pará","Pública (Municipal)","Manuela Freitas",0,0,0,1,0],
+  ["21/06","Ceará","Privada","Colégio Nossa Senhora de Fátima",4,1,51,28,14],
+  ["21/06","Ceará","Privada","Colégio Sossego",0,0,2,2,5],
+  ["21/06","Ceará","Privada","Colégio O Autêntico",0,1,2,2,0],
+  ["21/06","Ceará","Privada","Colégio Estrela Cívico Militar",0,0,1,0,0],
+  ["21/06","Rio de Janeiro","Pública (Federal)","Colégio Militar de Porto Alegre",0,0,6,8,5],
+  ["21/06","Alagoas","Privada","Colégio de Educação Básica Santa Afra",0,0,0,3,0],
+  ["21/06","Rio de Janeiro","Privada","Colégio Batista Múltiplos",30,19,0,0,0],
+  ["21/06","Distrito Federal","Privada","Escola Salesiana São Domingos Sávio",0,0,0,0,5],
+  ["21/06","Pernambuco","Pública (Estadual)","EREM Henrique Justino de Melo",0,0,0,0,46],
+  ["22/06","Espírito Santo","Privada","Colégio Castro Alves",0,65,109,100,130],
+  ["22/06","Paraná","Pública (Estadual)","Colégio Estadual Nereu Perondi",0,0,7,10,17],
+  ["22/06","São Paulo","Privada","Liceu Jardim",24,30,40,29,26],
+  ["22/06","Paraíba","Privada","Sistema de Ensino Conviver",48,36,15,20,0],
 ];
 
 const toNum=v=>{const n=parseInt(String(v).replace(/\D/g,""),10);return isNaN(n)?0:n;};
@@ -366,12 +471,12 @@ function progressBar(label,current,meta,color){
 }
 
 function diasRestantes(){
-  const enc=new Date(2026,5,28);
+  const enc=new Date(2026,5,30);
   return Math.max(0,Math.ceil((enc-new Date())/(864e5)));
 }
 
 function buildTimeline(rows){
-  const order=["10/04","14/04","16/04","17/04","18/04","22/04","23/04","24/04","27/04","28/04","29/04","04/05","05/05","06/05","07/05","08/05","13/05","15/05","17/05","18/05","19/05","20/05","21/05","22/05","27/05","28/05","29/05","01/06","03/06","05/06","06/06","07/06","08/06","09/06","10/06","11/06","12/06","15/06","16/06","17/06","18/06","19/06"];
+  const order=["10/04","14/04","16/04","17/04","18/04","22/04","23/04","24/04","27/04","28/04","29/04","04/05","05/05","06/05","07/05","08/05","13/05","15/05","17/05","18/05","19/05","20/05","21/05","22/05","27/05","28/05","29/05","01/06","03/06","05/06","06/06","07/06","08/06","09/06","10/06","11/06","12/06","15/06","16/06","17/06","18/06","19/06","20/06","21/06","22/06"];
   const byDate={};order.forEach(d=>byDate[d]=0);
   rows.forEach(r=>{if(byDate[r.data]!==undefined)byDate[r.data]+=r.total;});
   const daily=Object.entries(byDate).filter(([,v])=>v>0).map(([name,value])=>({name,value}));
