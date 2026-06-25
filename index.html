@@ -95,7 +95,7 @@ tr:nth-child(even) td{background:#FAFBFC;}
 const C={navy:"#161A32",blue:"#437FB7",red:"#E74E37",orange:"#F3A54C",white:"#FFFFFF",gray:"#F4F5F8",muted:"#8890A6",green:"#2D7A4F",light:"#E8EAF0"};
 const META_GLOBAL=57600,META_PUBLICA=28800,META_PRIVADA=28800;
 const ENCERRAMENTO="30/06/2026";
-const ATUALIZACAO="22/06/2026";
+const ATUALIZACAO="24/06/2026";
 
 const RAW=[
   ["10/04","Piauí","Pública (Estadual)","CETI MOISANIEL ALVES DE SOUSA",0,0,0,0,81],
@@ -340,6 +340,17 @@ const RAW=[
   ["22/06","Paraná","Pública (Estadual)","Colégio Estadual Nereu Perondi",0,0,7,10,17],
   ["22/06","São Paulo","Privada","Liceu Jardim",24,30,40,29,26],
   ["22/06","Paraíba","Privada","Sistema de Ensino Conviver",48,36,15,20,0],
+  ["22/06","Rio de Janeiro","Pública (Estadual)","Colégio Estadual Professora Alzira dos Santos da Silva",0,0,0,0,22],
+  ["22/06","São Paulo","Privada","Colégio Bozanhi",65,68,76,76,28],
+  ["22/06","São Paulo","Pública (Estadual)","ETEC Profª Ilza Nascimento Pintus",0,0,0,0,11],
+  ["22/06","Piauí","Pública (Estadual)","Centro Educação de Jovens e Adultos Alice Rocha",0,0,0,0,41],
+  ["22/06","Santa Catarina","Pública (Federal)","IFSC-Florianópolis",0,0,0,0,0],
+  ["23/06","Pará","Privada","Centro de Educação Infantil e Fundamental Modelo",0,0,22,10,0],
+  ["23/06","Paraná","Privada","Alisson Augusto Ferreira Garcia",0,0,0,3,2],
+  ["24/06","Paraná","Pública (Estadual)","Colégios Estadual Gustavo Dobrandino da Silva",1,1,1,1,1],
+  ["24/06","Pará","Privada","Avante Pequeno Príncipe",0,1,0,0,0],
+  ["24/06","Rio Grande do Norte","Pública (Estadual)","Escola Estadual Aristófanes Fernandes",0,0,0,146,0],
+  ["24/06","Minas Gerais","Pública (Federal)","Instituto Federal do Triângulo Mineiro - Campus Uberlândia",0,0,0,0,39],
 ];
 
 const toNum=v=>{const n=parseInt(String(v).replace(/\D/g,""),10);return isNaN(n)?0:n;};
@@ -476,7 +487,7 @@ function diasRestantes(){
 }
 
 function buildTimeline(rows){
-  const order=["10/04","14/04","16/04","17/04","18/04","22/04","23/04","24/04","27/04","28/04","29/04","04/05","05/05","06/05","07/05","08/05","13/05","15/05","17/05","18/05","19/05","20/05","21/05","22/05","27/05","28/05","29/05","01/06","03/06","05/06","06/06","07/06","08/06","09/06","10/06","11/06","12/06","15/06","16/06","17/06","18/06","19/06","20/06","21/06","22/06"];
+  const order=["10/04","14/04","16/04","17/04","18/04","22/04","23/04","24/04","27/04","28/04","29/04","04/05","05/05","06/05","07/05","08/05","13/05","15/05","17/05","18/05","19/05","20/05","21/05","22/05","27/05","28/05","29/05","01/06","03/06","05/06","06/06","07/06","08/06","09/06","10/06","11/06","12/06","15/06","16/06","17/06","18/06","19/06","20/06","21/06","22/06","23/06","24/06"];
   const byDate={};order.forEach(d=>byDate[d]=0);
   rows.forEach(r=>{if(byDate[r.data]!==undefined)byDate[r.data]+=r.total;});
   const daily=Object.entries(byDate).filter(([,v])=>v>0).map(([name,value])=>({name,value}));
