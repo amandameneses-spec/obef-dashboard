@@ -94,8 +94,8 @@ tr:nth-child(even) td{background:#FAFBFC;}
 <script>
 const C={navy:"#161A32",blue:"#437FB7",red:"#E74E37",orange:"#F3A54C",white:"#FFFFFF",gray:"#F4F5F8",muted:"#8890A6",green:"#2D7A4F",light:"#E8EAF0"};
 const META_GLOBAL=57600,META_PUBLICA=28800,META_PRIVADA=28800;
-const ENCERRAMENTO="30/06/2026";
-const ATUALIZACAO="24/06/2026";
+const ENCERRAMENTO="03/07/2026";
+const ATUALIZACAO="29/06/2026";
 
 const RAW=[
   ["10/04","Piauí","Pública (Estadual)","CETI MOISANIEL ALVES DE SOUSA",0,0,0,0,81],
@@ -351,6 +351,21 @@ const RAW=[
   ["24/06","Pará","Privada","Avante Pequeno Príncipe",0,1,0,0,0],
   ["24/06","Rio Grande do Norte","Pública (Estadual)","Escola Estadual Aristófanes Fernandes",0,0,0,146,0],
   ["24/06","Minas Gerais","Pública (Federal)","Instituto Federal do Triângulo Mineiro - Campus Uberlândia",0,0,0,0,39],
+  ["25/06","Rio Grande do Sul","Pública (Federal)","Colégio Militar de Porto Alegre",0,0,2,6,3],
+  ["25/06","São Paulo","Pública (Federal)","Instituto Federal Ciência e Tecnologia São Paulo - Campus Birigui",0,0,0,0,2],
+  ["26/06","Paraíba","Privada","Colégio Marista Pio X",0,0,0,0,2],
+  ["26/06","Alagoas","Pública (Estadual)","EE de Educação Básica José Enoque de Barros",0,0,0,0,16],
+  ["26/06","São Paulo","Privada","Liceu Jardim",27,30,40,29,27],
+  ["26/06","Bahia","Privada","Galileu Avalon",0,0,0,1,0],
+  ["26/06","Pará","Privada","Avante Pequeno Príncipe",0,0,0,1,0],
+  ["27/06","Pará","Pública (Estadual)","EE de Ensino Médio de Tempo Integral Dr. Ulysses Guimarães",0,0,0,0,38],
+  ["28/06","Piauí","Pública (Estadual)","CETI Paulistana",0,0,0,0,190],
+  ["29/06","Rio Grande do Norte","Privada","Centro Integrado de Vivências Educacionais",0,0,0,28,0],
+  ["29/06","Paraná","Privada","Eliana Elias Campos",0,0,11,3,4],
+  ["29/06","Minas Gerais","Pública (Federal)","Instituto Federal do Triângulo Mineiro - Campus Uberlândia Centro",0,0,0,0,47],
+  ["29/06","Ceará","Privada","Colégio Universo",0,0,0,0,12],
+  ["29/06","Bahia","Pública (Estadual)","Colégio Estadual Teotônio Vilela",0,0,0,0,9],
+  ["29/06","Mato Grosso do Sul","Privada","Colégio Status - unidade 1",259,147,161,177,0],
 ];
 
 const toNum=v=>{const n=parseInt(String(v).replace(/\D/g,""),10);return isNaN(n)?0:n;};
@@ -487,7 +502,7 @@ function diasRestantes(){
 }
 
 function buildTimeline(rows){
-  const order=["10/04","14/04","16/04","17/04","18/04","22/04","23/04","24/04","27/04","28/04","29/04","04/05","05/05","06/05","07/05","08/05","13/05","15/05","17/05","18/05","19/05","20/05","21/05","22/05","27/05","28/05","29/05","01/06","03/06","05/06","06/06","07/06","08/06","09/06","10/06","11/06","12/06","15/06","16/06","17/06","18/06","19/06","20/06","21/06","22/06","23/06","24/06"];
+  const order=["10/04","14/04","16/04","17/04","18/04","22/04","23/04","24/04","27/04","28/04","29/04","04/05","05/05","06/05","07/05","08/05","13/05","15/05","17/05","18/05","19/05","20/05","21/05","22/05","27/05","28/05","29/05","01/06","03/06","05/06","06/06","07/06","08/06","09/06","10/06","11/06","12/06","15/06","16/06","17/06","18/06","19/06","20/06","21/06","22/06","23/06","24/06","25/06","26/06","27/06","28/06","29/06"];
   const byDate={};order.forEach(d=>byDate[d]=0);
   rows.forEach(r=>{if(byDate[r.data]!==undefined)byDate[r.data]+=r.total;});
   const daily=Object.entries(byDate).filter(([,v])=>v>0).map(([name,value])=>({name,value}));
