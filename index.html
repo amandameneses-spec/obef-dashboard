@@ -94,8 +94,8 @@ tr:nth-child(even) td{background:#FAFBFC;}
 <script>
 const C={navy:"#161A32",blue:"#437FB7",red:"#E74E37",orange:"#F3A54C",white:"#FFFFFF",gray:"#F4F5F8",muted:"#8890A6",green:"#2D7A4F",light:"#E8EAF0"};
 const META_GLOBAL=57600,META_PUBLICA=28800,META_PRIVADA=28800;
-const ENCERRAMENTO="03/07/2026";
-const ATUALIZACAO="29/06/2026";
+const ENCERRAMENTO="10/07/2026";
+const ATUALIZACAO="02/07/2026";
 
 const RAW=[
   ["10/04","Piauí","Pública (Estadual)","CETI MOISANIEL ALVES DE SOUSA",0,0,0,0,81],
@@ -366,6 +366,42 @@ const RAW=[
   ["29/06","Ceará","Privada","Colégio Universo",0,0,0,0,12],
   ["29/06","Bahia","Pública (Estadual)","Colégio Estadual Teotônio Vilela",0,0,0,0,9],
   ["29/06","Mato Grosso do Sul","Privada","Colégio Status - unidade 1",259,147,161,177,0],
+  ["30/06","Paraíba","Privada","Colégio da Luz",0,0,5,2,0],
+  ["30/06","Piauí","Pública (Estadual)","CETI Professor José Leandro Deusdará",0,0,0,0,18],
+  ["30/06","Piauí","Pública (Estadual)","CETI José Patrício Franco",0,0,0,0,16],
+  ["30/06","Pernambuco","Privada","Colégio Piedade",127,124,191,147,213],
+  ["30/06","Rio Grande do Norte","Pública (Estadual)","EE Joaquim Adelino de Medeiros",52,59,0,0,0],
+  ["30/06","Pará","Privada","Colégio Sophos",69,70,0,0,0],
+  ["30/06","Minas Gerais","Privada","Colégio Magnum",0,0,0,5,0],
+  ["30/06","Piauí","Pública (Estadual)","CETI Maria Pires Lima",29,29,29,29,29],
+  ["30/06","Rio Grande do Sul","Pública (Estadual)","E.E.E. Médio Madre Madalena",0,0,0,0,8],
+  ["30/06","Piauí","Pública (Estadual)","UE Luiz Fernandes Borges Nascimento",0,0,0,0,1],
+  ["30/06","Piauí","Pública (Estadual)","CETI Joaquim Antônio Lustosa",0,0,0,0,127],
+  ["30/06","Rio de Janeiro","Privada","Instituto Nossa Senhora da Piedade II",0,0,6,21,25],
+  ["30/06","Piauí","Pública (Estadual)","CETI do Cerrado",0,0,0,0,365],
+  ["30/06","Piauí","Pública (Estadual)","Antonio José Rocha da Silva Junior",6,8,8,8,5],
+  ["30/06","Piauí","Pública (Estadual)","CETI Manoel Leal",0,0,0,172,91],
+  ["30/06","Rio Grande do Sul","Privada","Diego Angelos (JP I Higienópolis)",0,0,0,73,13],
+  ["30/06","Paraíba","Privada","Instituto Educacional Divina Misericórdia",10,0,0,0,0],
+  ["30/06","Rio Grande do Sul","Privada","João Paulo I - Higienópolis",0,0,0,47,2],
+  ["30/06","Piauí","Pública (Estadual)","CETI Frutuoso Silva",0,0,0,0,25],
+  ["30/06","Minas Gerais","Pública (Estadual)","Escola Estadual Assis Resende",0,0,27,32,38],
+  ["30/06","Ceará","Privada","Colégio Nossa Senhora de Fátima",28,23,58,32,14],
+  ["30/06","Ceará","Privada","Colégio Santo Antônio",18,41,6,11,24],
+  ["30/06","Piauí","Pública (Estadual)","CETI Doroteu Sertão",0,0,0,0,357],
+  ["30/06","Piauí","Pública (Estadual)","CETI Florisa Silva",0,0,0,0,61],
+  ["30/06","Paraíba","Privada","Século Colégio e Curso",0,0,0,2,0],
+  ["30/06","Pará","Pública (Estadual)","EE Prof. Temístocles de Araújo",0,0,20,10,35],
+  ["30/06","Rio Grande do Norte","Pública (Municipal)","Escola Municipal Professora Trindade Campêlo",0,0,21,0,0],
+  ["30/06","Pará","Pública (Municipal)","Escola Ruy da Silveira Britto",0,0,0,1,0],
+  ["30/06","Pará","Pública (Municipal)","EMEIF Professora Emília Gimenez",117,131,389,231,0],
+  ["30/06","Pará","Pública (Municipal)","Escola Municipal José Henrique",0,0,39,0,0],
+  ["30/06","Ceará","Privada","Colégio Sossego",1,0,9,8,5],
+  ["30/06","Ceará","Privada","Colégio Estrela Cívico Militar",0,0,3,1,0],
+  ["30/06","Ceará","Privada","Colégio O Autêntico",0,2,4,2,0],
+  ["30/06","Piauí","Pública (Federal)","IFPI - Campus Corrente",0,0,0,0,18],
+  ["30/06","Ceará","Pública (Municipal)","Centro de Educação Integral Inovação e Tecnologia",0,0,0,166,0],
+  ["01/07","Paraíba","Pública (Estadual)","ECIT Padre Aristides",0,0,0,0,139],
 ];
 
 const toNum=v=>{const n=parseInt(String(v).replace(/\D/g,""),10);return isNaN(n)?0:n;};
@@ -497,12 +533,12 @@ function progressBar(label,current,meta,color){
 }
 
 function diasRestantes(){
-  const enc=new Date(2026,6,3);
+  const enc=new Date(2026,6,10);
   return Math.max(0,Math.ceil((enc-new Date())/(864e5)));
 }
 
 function buildTimeline(rows){
-  const order=["10/04","14/04","16/04","17/04","18/04","22/04","23/04","24/04","27/04","28/04","29/04","04/05","05/05","06/05","07/05","08/05","13/05","15/05","17/05","18/05","19/05","20/05","21/05","22/05","27/05","28/05","29/05","01/06","03/06","05/06","06/06","07/06","08/06","09/06","10/06","11/06","12/06","15/06","16/06","17/06","18/06","19/06","20/06","21/06","22/06","23/06","24/06","25/06","26/06","27/06","28/06","29/06"];
+  const order=["10/04","14/04","16/04","17/04","18/04","22/04","23/04","24/04","27/04","28/04","29/04","04/05","05/05","06/05","07/05","08/05","13/05","15/05","17/05","18/05","19/05","20/05","21/05","22/05","27/05","28/05","29/05","01/06","03/06","05/06","06/06","07/06","08/06","09/06","10/06","11/06","12/06","15/06","16/06","17/06","18/06","19/06","20/06","21/06","22/06","23/06","24/06","25/06","26/06","27/06","28/06","29/06","30/06","01/07"];
   const byDate={};order.forEach(d=>byDate[d]=0);
   rows.forEach(r=>{if(byDate[r.data]!==undefined)byDate[r.data]+=r.total;});
   const daily=Object.entries(byDate).filter(([,v])=>v>0).map(([name,value])=>({name,value}));
