@@ -51,7 +51,7 @@
 const C={navy:"#161A32",blue:"#437FB7",red:"#E74E37",orange:"#F3A54C",white:"#FFFFFF",gray:"#F4F5F8",muted:"#8890A6",green:"#2D7A4F",light:"#E8EAF0"};
 const META_GLOBAL=57600,META_PUBLICA=28800,META_PRIVADA=28800;
 const ENCERRAMENTO="10/07/2026";
-const ATUALIZACAO="06/07/2026";
+const ATUALIZACAO="13/07/2026";
 const _E={"AL":"Alagoas","AP":"Amapá","BA":"Bahia","CE":"Ceará","DF":"Distrito Federal","ES":"Espírito Santo","MA":"Maranhão","MS":"Mato Grosso do Sul","MG":"Minas Gerais","PR":"Paraná","PB":"Paraíba","PA":"Pará","PE":"Pernambuco","PI":"Piauí","RN":"Rio Grande do Norte","RS":"Rio Grande do Sul","RJ":"Rio de Janeiro","RO":"Rondônia","SC":"Santa Catarina","SP":"São Paulo"};
 const RAW=[
 ["10/04","PI","Pública (Estadual)","CETI MOISANIEL ALVES DE SOUSA",0,0,0,0,81],
@@ -480,7 +480,7 @@ const enc=new Date(2026,6,10);
 return Math.max(0,Math.ceil((enc-new Date())/(864e5)));
 }
 function buildTimeline(rows){
-const order=["10/04","14/04","16/04","17/04","18/04","22/04","23/04","24/04","27/04","28/04","29/04","04/05","05/05","06/05","07/05","08/05","13/05","15/05","17/05","18/05","19/05","20/05","21/05","22/05","27/05","28/05","29/05","01/06","03/06","05/06","06/06","07/06","08/06","09/06","10/06","11/06","12/06","15/06","16/06","17/06","18/06","19/06","20/06","21/06","22/06","23/06","24/06","25/06","26/06","27/06","28/06","29/06","30/06","01/07","05/07"];
+const order=["10/04","14/04","16/04","17/04","18/04","22/04","23/04","24/04","27/04","28/04","29/04","04/05","05/05","06/05","07/05","08/05","13/05","15/05","17/05","18/05","19/05","20/05","21/05","22/05","27/05","28/05","29/05","01/06","03/06","05/06","06/06","07/06","08/06","09/06","10/06","11/06","12/06","15/06","16/06","17/06","18/06","19/06","20/06","21/06","22/06","23/06","24/06","25/06","26/06","27/06","28/06","29/06","30/06","01/07","05/07","06/07","07/07","08/07","09/07","10/07","11/07"];
 const byDate={};order.forEach(d=>byDate[d]=0);
 rows.forEach(r=>{if(byDate[r.data]!==undefined)byDate[r.data]+=r.total;});
 const daily=Object.entries(byDate).filter(([,v])=>v>0).map(([name,value])=>({name,value}));
